@@ -17,7 +17,6 @@ import static java.util.concurrent.Executors.newFixedThreadPool;
 public class JavaApiTest {
         //private static SessionPool poolSession = new SessionPool("127.0.0.1", 6667, "root", "root", 3);
         public static void main(String[] args) throws Exception {
-
             //while (true)
             /// 单批次1w 数据 cost 10-20ms
             //insertPoints(1000, 10000);
