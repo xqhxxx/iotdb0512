@@ -41,8 +41,8 @@ public class IoTDBTest_w {
 
         //多线程 写入 batchSize个测点（测点一条数据）
         ExecutorService pool = newFixedThreadPool(3);
-        for (int i = 0; i < 100; i++) {
-            pool.submit(new InsertPointsThread(10 * 1000));
+        for (int i = 0; i < 1; i++) {
+            pool.submit(new InsertPointsThread(500 * 1000));
         }
 // 本机环境  模拟创建10w个测点。
 //多线程测试写入数据，

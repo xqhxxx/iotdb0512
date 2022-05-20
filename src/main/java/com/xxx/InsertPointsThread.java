@@ -37,7 +37,7 @@ public class InsertPointsThread implements Runnable {
             //一次写1测点 10w data
             long ct_l = System.currentTimeMillis();
             for (int i = 1; i <= batchSize; i++) {
-                String point = "mp" + i;
+                String point = "mp" + 1;
                 Double AV = Math.random();
 
                 List<String> measurements = new ArrayList<>();
@@ -48,7 +48,7 @@ public class InsertPointsThread implements Runnable {
                 values.add(AV);
                 types.add(TSDataType.DOUBLE);
 
-                times.add(ct_l);
+                times.add(ct_l+i);
                 measurementsList.add(measurements);
                 typesList.add(types);
                 valuesList.add(values);
