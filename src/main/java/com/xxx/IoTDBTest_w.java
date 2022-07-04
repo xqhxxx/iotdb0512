@@ -41,16 +41,19 @@ public class IoTDBTest_w {
 
         //多线程 写入 batchSize个测点（测点一条数据）
         ExecutorService pool = newFixedThreadPool(3);
-        for (int i = 0; i < 1; i++) {
-            pool.submit(new InsertPointsThread(500 * 1000));
+        for (int i = 0; i < 10; i++) {
+            pool.submit(new InsertPointsThread(100* 1000));
+//            Thread.sleep(50);
         }
 // 本机环境  模拟创建10w个测点。
 //多线程测试写入数据，
-//单批次数据量    花费时间
-//    2w        37-70ms
-//    1w        20-40ms
-//    5k        8-20ms
-//    1k        0-7ms
+//单批次数据量    花费时间   后续写线程写入花费时间（avg）
+//    10w       656         400~1100
+//    5w        422         200
+//    2w        265ms       100
+//    1w        203ms       47
+//    5k       187ms        30
+
 //单批次数据量2w再往上，比如：10w直接后续扛不住卡死。
     }
 
